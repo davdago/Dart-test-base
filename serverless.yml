@@ -1,0 +1,67 @@
+  getCar:
+    handler: main.getCar
+    events:
+      - http:
+          path: /car
+          method: GET
+          cors:
+            origin: "*"
+            headers:
+              - Content-Type
+              - Content-Encoding
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - dynamodb:GetItem
+        Resource: "arn:aws:dynamodb:eu-north-1:211125726271:table/Cars"
+
+  deleteCar:
+    handler: main.deleteCar
+    events:
+      - http:
+          path: /car
+          method: DELETE
+          cors:
+            origin: "*"
+            headers:
+              - Content-Type
+              - Content-Encoding
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - dynamodb:DeleteItem
+        Resource: "arn:aws:dynamodb:eu-north-1:211125726271:table/Cars"
+
+  putCar:
+    handler: main.putCar
+    events:
+      - http:
+          path: /car
+          method: PUT
+          cors:
+            origin: "*"
+            headers:
+              - Content-Type
+              - Content-Encoding
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - dynamodb:PutItem
+        Resource: "arn:aws:dynamodb:eu-north-1:211125726271:table/Cars"
+
+  updateCar:
+    handler: main.updateCar
+    events:
+      - http:
+          path: /car
+          method: PATCH
+          cors:
+            origin: "*"
+            headers:
+              - Content-Type
+              - Content-Encoding
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - dynamodb:UpdateItem
+        Resource: "arn:aws:dynamodb:eu-north-1:211125726271:table/Cars"

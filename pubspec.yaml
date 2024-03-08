@@ -11,6 +11,12 @@ dependencies:
   json_annotation: ^4.8.0
   common:
     path: ./common
+  aws_apigatewaymanagementapi_api: null
+  aws_cognito_idp_api: null
+  aws_common: null
+  aws_dynamodb_api: null
+  aws_lambda_dart_runtime: ^1.1.0
+  
 dev_dependencies:
   build_runner: ^2.3.3
   lints: ^3.0.0
