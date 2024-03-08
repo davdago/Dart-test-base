@@ -5,9 +5,9 @@ Future<void> dynamoUpdateCar(DynamoDB dynamoDB, String carID, String color) asyn
   await dynamoDB.updateItem(
       key: {'carID': AttributeValue(s: carID)},
       tableName: 'cars_test',
-      updateExpression: 'SET #c = :newColor',
-      expressionAttributeNames: {':#c': 'color'},
+      updateExpression: 'SET #c = :newColor',     // #c('color') = color
+      expressionAttributeNames: {'#c': 'color'},
       expressionAttributeValues: {
-        '#newColor': AttributeValue(s: color.toString()),
+        ':newColor': AttributeValue(s: color.toString()),
       });
 }
