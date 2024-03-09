@@ -7,9 +7,9 @@ import 'package:dart_base/handlers/api/update_car.dart';
 
 void main() async {
   Runtime()
-    ..registerHandler<AwsApiGatewayEvent>("main.getPerson", getCar)
-    ..registerHandler<AwsApiGatewayEvent>("main.deletePerson", deleteCar)
-    ..registerHandler<AwsApiGatewayEvent>("main.putPerson", putCar)
-    ..registerHandler<AwsApiGatewayEvent>("main.updatePerson", updateCar)
+    ..registerHandler<AwsApiGatewayEvent>("main.getCar", getCar)
+    ..registerHandler<AwsApiGatewayEvent>("main.deleteCar", deleteCar)
+    ..registerHandler<AwsApiGatewayEvent>("main.putCar", putCar)
+    ..registerHandler<AwsApiGatewayEvent>("main.updateCar", updateCar)
     ..invoke();
 }
